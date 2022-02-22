@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="startGame">Start Game</button>
+  <h1 id="timer"></h1>
+  <h1 id="blanks"></h1>
+  <script>
+    const words = ['one', 'two', 'three', 'four', 'five']
+    let chosenWord = ''
+    let seconds = 10
+    let countdown
+
+    document.getElementById('startGame').addEventListener('click', () => {
+      chosenWord = words[Math.floor(Math.random() * words.length)]
+      console.log(chosenWord)
+      for (let i =0; i < chosenWord.length; i++) {
+        document.getElementById('blanks').textContent += '_ '
+      }
+
+      countdown = setInterval(() => {
+        document.getElementById('timer').textContent = seconds + ' seconds'
+        seconds--
+
+        if (seconds < 0) {
+          clearInterval(countdown)
+          // Timer runs out logic
+        }
+      }, 1000)
+    })
+
+  </script>
+</body>
+</html>
