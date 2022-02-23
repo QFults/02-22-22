@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <style>
-
-    .red {
-      color: red;
+    #feedback {
+      font-size: 1.4em;
     }
-
+  
+    #selectable .ui-selecting {
+      background: #FECA40;
+    }
+  
+    #selectable .ui-selected {
+      background: #F39814;
+      color: white;
+    }
+  
+    #selectable {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 60%;
+    }
+  
+    #selectable li {
+      margin: 3px;
+      padding: 0.4em;
+      font-size: 1.4em;
+      height: 18px;
+    }
   </style>
 </head>
+
 <body>
   <!-- <h1 id="myHeading">Hello World!</h1> -->
   <!-- <ul id="list"></ul> -->
@@ -37,7 +61,7 @@
 
   </div> -->
 
-  <div id="myDiv">
+  <!-- <div id="myDiv">
 
     <ul>
       <li>a</li>
@@ -53,12 +77,37 @@
       <li>4</li>
     </ul>
 
+  </div> -->
+
+  <!-- <div id="dialog" title="Basic dialog">
+    <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and
+      closed with the &apos;x&apos; icon.</p>
   </div>
+
+  <div id="slider"></div> -->
+  <ul id="selectable">
+    <li class="ui-widget-content">a</li>
+    <li class="ui-widget-content">b</li>
+    <li class="ui-widget-content">c</li>
+    <li class="ui-widget-content">d</li>
+    <li class="ui-widget-content">e</li>
+    <li class="ui-widget-content">f</li>
+  </ul>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+    integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+  <script>
 
-      $('#myDiv').children('ul').eq(1).children('li').eq(2).css('color', 'blue')
+    // $('#selectable').sortable()
+    $('#selectable').selectable()
+    // $('#list').disableSelection()
+    
+    // $('#slider').slider()
+
+    // $('#dialog').dialog()
+
+    // $('#myDiv').children('ul').eq(1).children('li').eq(2).css('color', 'blue')
 
       // $('#myDiv').children('button').css('color', 'red')
       // $('#myDiv').children('button').addClass('red')
@@ -93,6 +142,7 @@
       //   $('#list').append(listElem)
       // }
 
-    </script>
+  </script>
 </body>
+
 </html>
