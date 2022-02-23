@@ -5,12 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+
+    .red {
+      color: red;
+    }
+
+  </style>
 </head>
 <body>
   <!-- <h1 id="myHeading">Hello World!</h1> -->
   <!-- <ul id="list"></ul> -->
   <!-- <button id="myBtn">Click Me</button> -->
-  <form>
+
+  <!-- <form>
     <p>
       <label for="email">email</label>
       <input type="email" name="email" id="email">
@@ -21,21 +29,50 @@
     </p>
     <button id="submit">Submit</button>
   </form>
-  <div id="info"></div>
+  <div id="info"></div> -->
+
+  <!-- <div id="myDiv">
+
+    <button>Click Me</button>
+
+  </div> -->
+
+  <div id="myDiv">
+
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>d</li>
+    </ul>
+
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+  </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
 
-      $('#submit').click(event => {
-        event.preventDefault()
+      $('#myDiv').children('ul').eq(1).children('li').eq(2).css('color', 'blue')
 
-        const email = $('#email').val()
-        const password = $('#password').val()
-        $('#info').text(email + ' | ' + password)
+      // $('#myDiv').children('button').css('color', 'red')
+      // $('#myDiv').children('button').addClass('red')
 
-        $('#email').val('')
-        $('#password').val('')
-      })
+      // $('#submit').click(event => {
+      //   event.preventDefault()
+
+      //   const email = $('#email').val()
+      //   const password = $('#password').val()
+      //   $('#info').text(email + ' | ' + password)
+
+      //   $('#email').val('')
+      //   $('#password').val('')
+      // })
 
       // $('#myBtn').click(() => {
       //   alert('hi')
