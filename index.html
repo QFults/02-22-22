@@ -85,22 +85,26 @@
   </div>
 
   <div id="slider"></div> -->
-  <ul id="selectable">
+  <!-- <ul id="selectable">
     <li class="ui-widget-content">a</li>
     <li class="ui-widget-content">b</li>
     <li class="ui-widget-content">c</li>
     <li class="ui-widget-content">d</li>
     <li class="ui-widget-content">e</li>
     <li class="ui-widget-content">f</li>
-  </ul>
+  </ul> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
     integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
   <script>
 
+    console.log(moment().format('[Time: ] h:mm a [Date: ] MMM Do, YYYY'))
+    console.log(moment('03:15 PM, 12/12/12', 'hh:mm A, M/DD/YY').format('[Time: ] h:mm a [Date: ] MMM Do, YYYY'))
+
     // $('#selectable').sortable()
-    $('#selectable').selectable()
+    // $('#selectable').selectable()
     // $('#list').disableSelection()
     
     // $('#slider').slider()
