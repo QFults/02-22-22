@@ -9,14 +9,37 @@
 <body>
   <!-- <h1 id="myHeading">Hello World!</h1> -->
   <!-- <ul id="list"></ul> -->
-  <button id="myBtn">Click Me</button>
+  <!-- <button id="myBtn">Click Me</button> -->
+  <form>
+    <p>
+      <label for="email">email</label>
+      <input type="email" name="email" id="email">
+    </p>
+    <p>
+      <label for="password">password</label>
+      <input type="password" name="password" id="password">
+    </p>
+    <button id="submit">Submit</button>
+  </form>
+  <div id="info"></div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
 
-      $('#myBtn').click(() => {
-        alert('hi')
+      $('#submit').click(event => {
+        event.preventDefault()
+
+        const email = $('#email').val()
+        const password = $('#password').val()
+        $('#info').text(email + ' | ' + password)
+
+        $('#email').val('')
+        $('#password').val('')
       })
+
+      // $('#myBtn').click(() => {
+      //   alert('hi')
+      // })
 
       // document.getElementById('myHeading')
 
